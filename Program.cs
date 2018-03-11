@@ -1,6 +1,7 @@
 ﻿using dmExcelLoader;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,12 @@ namespace ContentsBuilder
 	{
 		static void Main(string[] args)
 		{
-			ExcelLoader excelLoader = new ExcelLoader();
+			string currentPath = Directory.GetCurrentDirectory();
 
-			excelLoader.Load("/Data");
+			ExcelLoader.Configuration = LoaderConfiguration.Defaultconfiguration;
+
+			ExcelLoader excelLoader = new ExcelLoader();
+			excelLoader.Load(currentPath + "/../../ExcelData");
 		}
 	}
 }
