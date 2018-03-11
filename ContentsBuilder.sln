@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentsBuilder", "ContentsBuilder.csproj", "{ABAFEF84-2738-4F8D-A893-13C38BBAAE83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dmExcelLoader", "..\..\dmExcelLoader\dmExcelLoader.csproj", "{E69C2D9D-921D-41C4-A069-B00FE7D3A44B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{036C5938-83BD-41E2-9204-7622D16CB24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dmExcelLoader", "..\dmExcelLoader\dmExcelLoader.csproj", "{E69C2D9D-921D-41C4-A069-B00FE7D3A44B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

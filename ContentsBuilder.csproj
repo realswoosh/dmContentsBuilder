@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\dmExcelLoader\dmExcelLoader.csproj">
+    <ProjectReference Include="..\dmExcelLoader\dmExcelLoader.csproj">
       <Project>{e69c2d9d-921d-41c4-a069-b00fe7d3a44b}</Project>
       <Name>dmExcelLoader</Name>
     </ProjectReference>
