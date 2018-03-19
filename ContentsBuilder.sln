@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{036C5938-83B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dmExcelLoader", "..\dmExcelLoader\dmExcelLoader.csproj", "{E69C2D9D-921D-41C4-A069-B00FE7D3A44B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Output", "Output", "{B1F71068-83A7-451C-8E7C-613E768FE2FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

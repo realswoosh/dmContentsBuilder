@@ -1,10 +1,6 @@
-﻿using dmExcelLoader;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
+
+using dmExcelLoader;
 
 namespace ContentsBuilder
 {
@@ -13,11 +9,23 @@ namespace ContentsBuilder
 		static void Main(string[] args)
 		{
 			string currentPath = Directory.GetCurrentDirectory();
+			
+			var config = LoaderConfiguration.Defaultconfiguration;
 
-			ExcelLoader.Configuration = LoaderConfiguration.Defaultconfiguration;
-
+			config.Path = $"{currentPath}/../../ExcelData";
+						
 			ExcelLoader excelLoader = new ExcelLoader();
-			excelLoader.Load(currentPath + "/../../ExcelData");
+			excelLoader.Configuration = config;
+			excelLoader.Load();
+			excelLoader.FormatParse();
+
+			//dmGameData.ResourceManager.ResourceDatabase resourceDatabase = new dmGameData.ResourceManager.ResourceDatabase();
+			//resourceDatabase.Load(excelLoader);
+
+			//FormatGenerator generator = new FormatGenerator();
+			//generator.Configuration = config;
+			//generator.GenerateClassFile(excelLoader);
+
 		}
 	}
 }
