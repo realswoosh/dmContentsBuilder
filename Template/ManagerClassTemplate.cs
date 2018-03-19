@@ -90,6 +90,10 @@ namespace #namespace
 					{
 						ret = Array.ConvertAll(cell.Text.Split(';'), s => float.Parse(s));
 					}
+					else if (ht.ValueRealType == typeof(double[]))
+					{
+						ret = Array.ConvertAll(cell.Text.Split(';'), s => double.Parse(s));
+					}
 					else if (ht.ValueRealType == typeof(string[]))
 					{
 						ret = cell.Text.Split(';');
