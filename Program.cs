@@ -18,6 +18,12 @@ namespace ContentsBuilder
 			excelLoader.Configuration = config;
 			excelLoader.Load();
 			excelLoader.FormatParse();
+			excelLoader.Transform();
+
+			
+			BinaryLoader binaryLoader = new BinaryLoader();
+			binaryLoader.Configuration = config;
+			binaryLoader.Load();
 
 			//dmGameData.ResourceManager.ResourceDatabase resourceDatabase = new dmGameData.ResourceManager.ResourceDatabase();
 			//resourceDatabase.Load(excelLoader);

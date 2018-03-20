@@ -130,7 +130,7 @@ namespace #namespace
 
 		public void Save(List<ClassTemplate> classTemplateList)
 		{
-			string savePath = Configuration.AddProjectPath + Configuration.PathClassResourceManager;
+			string savePath = Configuration.AddProjectPath + Configuration.PathOutputClassResourceManager;
 			string fileName = Configuration.ResourceManagerFileName;
 			string fullPath = savePath + "/" + fileName;
 

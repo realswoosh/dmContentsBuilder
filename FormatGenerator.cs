@@ -76,20 +76,20 @@ namespace ContentsBuilder
 
 			XDocument doc = XDocument.Load(projectPath);
 			var itemGroup = doc.XPathSelectElement("//p:ItemGroup/p:Compile", r).Parent;
-			var remove1 = doc.XPathSelectElements($"//p:ItemGroup/p:Compile[contains(@Include, '{Configuration.PathClass}')]", r);
-			var remove2 = doc.XPathSelectElements($"//p:ItemGroup/p:Compile[contains(@Include, '{Configuration.PathClassResourceManager}')]", r);
+			var remove1 = doc.XPathSelectElements($"//p:ItemGroup/p:Compile[contains(@Include, '{Configuration.PathOutputClass}')]", r);
+			var remove2 = doc.XPathSelectElements($"//p:ItemGroup/p:Compile[contains(@Include, '{Configuration.PathOutputClassResourceManager}')]", r);
 			remove1.Remove();
 			remove2.Remove();
 
-			var files = Directory.GetFiles(Configuration.AddProjectPath + "/" + Configuration.PathClass, "*.cs");
+			var files = Directory.GetFiles(Configuration.AddProjectPath + "/" + Configuration.PathOutputClass, "*.cs");
 
 			foreach (string file in files)
 			{
-				string resourceFilePath = Configuration.PathClass + "\\" + Path.GetFileName(file);
+				string resourceFilePath = Configuration.PathOutputClass + "\\" + Path.GetFileName(file);
 				itemGroup.Add(new XElement(defaultNs + "Compile", new XAttribute("Include", resourceFilePath)));
 			}
 
-			itemGroup.Add(new XElement(defaultNs + "Compile", new XAttribute("Include", $"{Configuration.PathClassResourceManager}\\{Configuration.ResourceManagerFileName}")));
+			itemGroup.Add(new XElement(defaultNs + "Compile", new XAttribute("Include", $"{Configuration.PathOutputClassResourceManager}\\{Configuration.ResourceManagerFileName}")));
 
 			doc.Save(projectPath);
 		}

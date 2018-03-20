@@ -26,7 +26,7 @@ namespace ContentsBuilder.Template
 		{
 			string className = Configuration.PrefixDataClass + formatSheet.SheetName;
 
-			string savePath = Configuration.AddProjectPath + Configuration.PathClass;
+			string savePath = Configuration.AddProjectPath + Configuration.PathOutputClass;
 			string fileName = className + ".cs";
 			string fullPath = savePath + "/" + fileName;
 

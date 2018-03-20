@@ -26,7 +26,7 @@ namespace ContentsBuilder.Template
 
 		public void Save()
 		{
-			string savePath = Configuration.AddProjectPath + Configuration.PathClass;
+			string savePath = Configuration.AddProjectPath + Configuration.PathOutputClass;
 			string fileName = FileName;
 			string fullPath = savePath + "/" + fileName;
 
