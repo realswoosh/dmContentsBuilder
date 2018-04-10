@@ -19,14 +19,13 @@ namespace ContentsBuilder
 			excelLoader.Load();
 			excelLoader.FormatParse();
 			excelLoader.Transform();
-
-			
+						
 			BinaryLoader binaryLoader = new BinaryLoader();
 			binaryLoader.Configuration = config;
 			binaryLoader.Load();
 
-			//dmGameData.ResourceManager.ResourceDatabase resourceDatabase = new dmGameData.ResourceManager.ResourceDatabase();
-			//resourceDatabase.Load(excelLoader);
+			dmGameData.ResourceManager.ResourceDatabase resourceDatabase = new dmGameData.ResourceManager.ResourceDatabase();
+			resourceDatabase.Load(excelLoader);
 
 			//FormatGenerator generator = new FormatGenerator();
 			//generator.Configuration = config;

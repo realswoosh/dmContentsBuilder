@@ -47,18 +47,24 @@ namespace #namespace
 
 			FieldInfo[] fieldinfos = t.GetType().GetFields();
 
+			int continueCount = 0;
+
 			foreach (FieldInfo fi in fieldinfos)
 			{
 				HeaderType ht = headerTypeList.Find(x => x.ValueName.Equals(fi.Name, System.StringComparison.OrdinalIgnoreCase));
 
 				if (ht == null)
+				{
+					continueCount++;
 					continue;
+				}
 
 				Cell cell = Array.Find(row.FilledCells, x => x.ReferenceIndex == ht.ReferenceIndex);
 				if (cell == null ||
 					cell.Text == null)
 				{
 					fi.SetValue(t, TypeInfos.GetDefaultValue(ht.ValueRealType));
+					continueCount++;
 					continue;
 				}
 
@@ -102,6 +108,9 @@ namespace #namespace
 					fi.SetValue(t, Convert.ChangeType(ret, ht.ValueRealType));
 				}
 			}
+			
+			if (continueCount == fieldinfos.Length)
+				return null;
 
 			return t;
 		}
@@ -120,6 +129,9 @@ namespace #namespace
 			foreach (var row in sheet.rowList)
 			{
 				#classname data = InnerLoad<#classname>(sheet.HeaderTypeList, row);
+
+				if (data == null)
+					continue;
 
 				#containerlist.Add(data);
 				#containerdic
