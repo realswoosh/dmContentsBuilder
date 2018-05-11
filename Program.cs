@@ -11,6 +11,17 @@ namespace ContentsBuilder
 			string currentPath = Directory.GetCurrentDirectory();
 			
 			var config = LoaderConfiguration.Defaultconfiguration;
+			
+			// multi column
+
+			/*
+			config.StartRow = 2;
+			config.StartCol = 1;
+			config.Header = 2;
+			config.PrefixIgnoreColumn = new[] { '#', '/' };
+			config.IsAutoAdd = true;
+			config.DescriptionSheetName = new[] { "Reference", "RefData" };
+			*/
 
 			config.Path = $"{currentPath}/../../ExcelData";
 						
